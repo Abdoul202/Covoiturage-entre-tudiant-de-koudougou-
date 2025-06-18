@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carte des Trajets - Koudougou</title>
+    <meta charset="UTF-8">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #map {
+            height: 100%;
+        }
+        .info-window {
+            max-width: 250px;
+        }
+        .info-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .info-content {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDrq1Pl2LLoCZbI4FCVB60o711CXGOb1k&callback=initMap" async defer></script>
+    <script>
+        /* TRAJETS_PLACEHOLDER */
+        
+        // Coordonnées de Koudougou (par défaut)
+        const KOUDOUGOU_COORDS = { lat: 12.2565, lng: -2.3588 };
+        
+        function initMap() {
+            // Créer la carte centrée sur Koudougou
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: KOUDOUGOU_COORDS,
+            });
+            
+            // Géocodage des adresses et affichage des trajets
+            const geocoder = new google.maps.Geocoder();
+            const bounds = new google.maps.LatLngBounds();
+            
+            // Pour chaque trajet, géocoder les adresses et dessiner le trajet
+            trajets.forEach(trajet => {
+                geocoder.geocode({ address: trajet.depart + ', Koudougou, Burkina Faso' }, (results, status) => {
+                    if (status === "OK" && results[0]) {
+                        const departLocation = results[0].geometry.location;
+                        
+                        geocoder.geocode({ address: trajet.arrivee + ', Koudougou, Burkina Faso' }, (results, status) => {
+                            if (status === "OK" && results[0]) {
+                                const arriveeLocation = results[0].geometry.location;
+                                
+                                // Ajouter les marqueurs
+                                const markerDepart = new google.maps.Marker({
+                                    position: departLocation,
+                                    map: map,
+                                    title: `Départ: ${trajet.depart}`,
+                                    icon: {
+                                        url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                                    }
+                                });
+                                
+                                const markerArrivee = new google.maps.Marker({
+                                    position: arriveeLocation,
+                                    map: map,
+                                    title: `Arrivée: ${trajet.arrivee}`,
+                                    icon: {
+                                        url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                                    }
+                                });
+                                
+                                // Dessiner la ligne du trajet
+                                const trajetLine = new google.maps.Polyline({
+                                    path: [departLocation, arriveeLocation],
+                                    geodesic: true,
+                                    strokeColor: "#4285F4",
+                                    strokeOpacity: 1.0,
+                                    strokeWeight: 3,
+                                    map: map
+                                });
+                                
+                                // Créer le contenu de l'info-bulle
+                                const infoContent = `
+                                    <div class="info-window">
+                                        <div class="info-title">Trajet ${trajet.id}</div>
+                                        <div class="info-content">
+                                            <strong>De:</strong> ${trajet.depart}<br>
+                                            <strong>À:</strong> ${trajet.arrivee}<br>
+                                            <strong>Conducteur:</strong> ${trajet.conducteur}<br>
+                                            <strong>Date:</strong> ${trajet.date} à ${trajet.heure}<br>
+                                            <strong>Places:</strong> ${trajet.places}
+                                        </div>
+                                    </div>
+                                `;
+                                
+                                const infoWindow = new google.maps.InfoWindow({
+                                    content: infoContent
+                                });
+                                
+                                // Ajouter les événements pour afficher l'info-bulle
+                                markerDepart.addListener("click", () => {
+                                    infoWindow.open(map, markerDepart);
+                                });
+                                
+                                markerArrivee.addListener("click", () => {
+                                    infoWindow.open(map, markerArrivee);
+                                });
+                                
+                                // Étendre les limites de la carte pour inclure ce trajet
+                                bounds.extend(departLocation);
+                                bounds.extend(arriveeLocation);
+                                map.fitBounds(bounds);
+                            }
+                        });
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

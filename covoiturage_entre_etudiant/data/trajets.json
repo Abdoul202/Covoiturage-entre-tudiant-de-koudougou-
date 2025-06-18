@@ -1,0 +1,65 @@
+[
+  {
+    "id": "27294ee6-fef8-42f7-8c83-1d5d9b282916",
+    "conducteur_id": "de54224d-e7de-46be-96cf-c6ede1c61172",
+    "conducteur_nom": "OUEDRAOGO ABDOULAYE",
+    "ville_depart": "koudougou",
+    "ville_arrivee": "Burkina Institute Of Technology(B.I.T)",
+    "date": "2025-05-22",
+    "heure": "07:25",
+    "places": 2,
+    "passagers": [
+      "u002"
+    ],
+    "depart_lat": null,
+    "depart_lng": null,
+    "arrivee_lat": null,
+    "arrivee_lng": null
+  },
+  {
+    "id": "30198f55-28ea-4c55-8ae8-79d08755a1bc",
+    "conducteur_id": "de54224d-e7de-46be-96cf-c6ede1c61172",
+    "conducteur_nom": "OUEDRAOGO ABDOULAYE",
+    "ville_depart": "12.240840663344871, -2.393323247723575",
+    "ville_arrivee": "12.217643299862004, -2.377096428900569",
+    "date": "2025-06-02",
+    "heure": "12:25",
+    "places": 1,
+    "passagers": [
+      "u002"
+    ]
+  },
+  {
+    "id": "d4382457-c014-4a11-81d5-80b9f9ea2e6c",
+    "conducteur_id": "u002",
+    "conducteur_nom": "KABORE SALAM",
+    "ville_depart": "KOUDOUGOU",
+    "ville_arrivee": "BIT",
+    "date": "2025-10-20",
+    "heure": "10:28",
+    "places": 2,
+    "passagers": []
+  },
+  {
+    "id": "8fdb71c1-8420-4f81-af18-f8bfa6a6e563",
+    "conducteur_id": "u002",
+    "conducteur_nom": "KABORE SALAM",
+    "ville_depart": "Koudougou",
+    "ville_arrivee": "Burkina Institute Of Technologie",
+    "date": "2025-06-03",
+    "heure": "09:00",
+    "places": 1,
+    "passagers": []
+  },
+  {
+    "id": "1e59cda1-57ae-4c3d-8091-766085a73db9",
+    "conducteur_id": "u002",
+    "conducteur_nom": "KABORE SALAM",
+    "ville_depart": "Caserne des pompiers",
+    "ville_arrivee": "Burkina Institute Of Technologie",
+    "date": "2025-05-09",
+    "heure": "08:00",
+    "places": 2,
+    "passagers": []
+  }
+]

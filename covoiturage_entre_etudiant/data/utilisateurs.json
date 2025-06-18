@@ -1,0 +1,46 @@
+[
+  {
+    "id": "de54224d-e7de-46be-96cf-c6ede1c61172",
+    "nom": "OUEDRAOGO ABDOULAYE",
+    "email": "ouedraogoabdoulaye2021a@gmail.com",
+    "mot_de_passe": "f4faf78d81f6972d8256b11f95d86d81e9fe911df83f701ad90af31fcb2168ba",
+    "trajets": [
+      "27294ee6-fef8-42f7-8c83-1d5d9b282916",
+      "30198f55-28ea-4c55-8ae8-79d08755a1bc"
+    ]
+  },
+  {
+    "id": "u002",
+    "nom": "KABORE SALAM",
+    "email": "salam226@gmail.com",
+    "mot_de_passe": "d61d8d8b260da447f5aa920106d51bbffc4107544ac4cd47fc5fdc794361e9cf",
+    "trajets": [
+      "d4382457-c014-4a11-81d5-80b9f9ea2e6c",
+      "8fdb71c1-8420-4f81-af18-f8bfa6a6e563",
+      "1e59cda1-57ae-4c3d-8091-766085a73db9"
+    ],
+    "evaluations": []
+  },
+  {
+    "id": "u003",
+    "nom": "TOUGMA TREVIS",
+    "email": "trevis226@gmail.com",
+    "mot_de_passe": "c7f2579669612c9e72c707cc4c35c2934fd945c6f7b1a48deaf6293fee2b666e",
+    "trajets": [],
+    "evaluations": []
+  },
+  {
+    "id": "a6dbd324-9007-4065-8adb-5962dbe6f707",
+    "nom": "BERENGER ZOUNGRANA",
+    "email": "shiftyzb24gmail.com",
+    "mot_de_passe": "cfc36527af2fb0520721e701dc1a1ab7cb22bbcbc73e6f38d5855fdad3d0de1c",
+    "trajets": []
+  },
+  {
+    "id": "004711dc-1f92-4509-b10f-6f26c1d04c9c",
+    "nom": "BsB",
+    "email": "cs27@gmail.com",
+    "mot_de_passe": "f6035f930127c484695d06f5ebf7a98fbf79323bf44758aed3c2b4d00901e6d3",
+    "trajets": []
+  }
+]
